@@ -7,24 +7,95 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
+import 'package:rpn_calc/calculator.dart';
 import 'package:rpn_calc/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  test('addition RPNCalculator Test', () {
+    // Create an instance of the calculator
+    RPNCalculator calculator = RPNCalculator();
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Define the sample RPN expression
+    String expression = '199 2 +';
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    // Calculate the result
+    double result = calculator.calculateRPN(expression);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify that the result is correct
+    expect(result, equals(201));
   });
+
+  test('subtraction RPNCalculator Test', () {
+    // Create an instance of the calculator
+    RPNCalculator calculator = RPNCalculator();
+
+    // Define the sample RPN expression
+    String expression = '2 6 -';
+
+    // Calculate the result
+    double result = calculator.calculateRPN(expression);
+
+    // Verify that the result is correct
+    expect(result, equals(-4.0));
+  });
+
+  test('division RPNCalculator Test', () {
+    // Create an instance of the calculator
+    RPNCalculator calculator = RPNCalculator();
+
+    // Define the sample RPN expression
+    String expression = '12 6 /';
+
+    // Calculate the result
+    double result = calculator.calculateRPN(expression);
+
+    // Verify that the result is correct
+    expect(result, equals(2.0));
+  });
+
+  test('multiplikation RPNCalculator Test', () {
+    // Create an instance of the calculator
+    RPNCalculator calculator = RPNCalculator();
+
+    // Define the sample RPN expression
+    String expression = '4 6 *';
+
+    // Calculate the result
+    double result = calculator.calculateRPN(expression);
+
+    // Verify that the result is correct
+    expect(result, equals(24.0));
+  });
+
+  test('multiplikation 0 RPNCalculator Test', () {
+    // Create an instance of the calculator
+    RPNCalculator calculator = RPNCalculator();
+
+    // Define the sample RPN expression
+    String expression = '42 0 *';
+
+    // Calculate the result
+    double result = calculator.calculateRPN(expression);
+
+    // Verify that the result is correct
+    expect(result, equals(0.0));
+  });
+
+  test('division RPNCalculator Test', () {
+    // Create an instance of the calculator
+    RPNCalculator calculator = RPNCalculator();
+
+    // Define the sample RPN expression
+    String expression = '0 6 /';
+
+    // Calculate the result
+    double result = calculator.calculateRPN(expression);
+
+    // Verify that the result is correct
+    expect(result, equals(0));
+  });
+
 }
+
+
+
