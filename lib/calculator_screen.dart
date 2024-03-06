@@ -121,8 +121,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           });
         },
         style: ElevatedButton.styleFrom(
-          Colors.blueGrey,
-          Colors.white,
+          backgroundColor: Colors.blueGrey,
+          foregroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40.0),
           ),
