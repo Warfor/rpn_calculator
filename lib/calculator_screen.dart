@@ -121,8 +121,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           });
         },
         style: ElevatedButton.styleFrom(
-          primary: Colors.grey[600],
-          onPrimary: Colors.white,
+          Colors.blueGrey,
+          Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40.0),
           ),
@@ -172,8 +172,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           });
         },
         style: ElevatedButton.styleFrom(
-          primary: label == 'Enter' ? Colors.blue : Colors.green,
-          onPrimary: Colors.white,
+          backgroundColor: label == 'Enter' ? Colors.blue : Colors.green,
+          foregroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40.0),
           ),
@@ -200,8 +200,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           });
         },
         style: ElevatedButton.styleFrom(
-          primary: Colors.blue[400],
-          onPrimary: Colors.red,
+          backgroundColor: Colors.blue[400],
+          foregroundColor: Colors.red,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40.0),
           ),
